@@ -1,0 +1,24 @@
+{%   extends "blog/base.html" %}
+{% block content %}
+<div style="background-color:silver; width:900px; align:center">
+
+<p> <h2>Title :{{ posts.title}}</h2><br/><hr/>
+    <b>created</b>:{{posts.Datecreated}}&nbsp&nbsp
+    <b>updated</b>:{{posts.Dateupdated}}<br/>
+</p>
+
+<p style="color:red"> Body:<br/>{{posts.body}}</p>
+
+
+                 {% for a in comments %}
+                 <p>
+                 <b>Author</b>:{{a.author}}<br/>
+                 <b>date created</b>:{{ a.Datecreated}}<br/>
+                 <b>date updated</b>:{{ a.Dateupdated}}<br/>
+                 </p>
+                 <p style="color:red"><b>Comments<br/></b>:{{ a.body}}</p>
+
+                 {%endfor%}
+
+</div>
+{% endblock %}

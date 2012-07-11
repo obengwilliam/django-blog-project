@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<p><b>Titles include </b></p>
+{% for i in posts %}
+<p> <a href="/blog/posts/{{i.id}}/True">{{i}}</a>
+
+</p>
+
+{% endfor %}
+{% endblock %}

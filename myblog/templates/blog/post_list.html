@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+{% for i in posts %}
+<h2><a href="/blog/posts/{{i.id}}/True" >{{i.title}} </a> 
+</h2>
+         <ul> 
+         <li>created:{{ i.Datecreated }} </li>
+         <li>updated: {{ i.Dateupdated }}</li>
+         <li>{{ i.Firstsixtycharacters }}</li>
+     	 </ul>
+
+
+{% endfor %}
+
+{% endblock %}
+
+
+
