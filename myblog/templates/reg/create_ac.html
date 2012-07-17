@@ -1,0 +1,25 @@
+<!--
+the template for your login page
+This should be places in the templates/reg
+folder. Name it what you will, but make sure
+that the view function has the correct path
+
+Also, remember that for this template
+the lab has you make some changes
+-->
+
+
+
+{% extends "reg/base.html" %}
+
+{% block content %}
+<div>
+<img src="/static/img/logo2.png" title="we build,we deliver"/> <i style="font-size:1.5em;" >Create a Blog,it absolutely free</i>
+<a href=""><button type='button' style="float:right; margin-right:1em"><i class="icon-refresh">&nbsp&nbsp </i> Refresh</button> </a>
+</div>
+<hr style="background-color:green;  height:5px;" />
+  <form action="." method="post" class="form-horizontal">
+     {{ form.as_p }}
+     <input type="submit" value="Submit" value="Login!" />
+  </form>
+{% endblock %}

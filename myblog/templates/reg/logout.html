@@ -1,0 +1,30 @@
+<!--
+the template for your login page
+This should be places in the templates/reg
+folder. Name it what you will, but make sure
+that the view function has the correct path
+
+-->
+
+
+
+{% extends "reg/login.html" %}
+
+{% block content %}
+
+You have been successfully <b style="color:red;">logged out.</b>
+<div>
+<img src="/static/img/logo2.png" title="we build,we deliver"/> <i style="font-size:1.5em;" >Create a Blog,it absolutely free</i>
+<a href=""><button type='button' style="float:right; margin-right:1em"><i class="icon-refresh">&nbsp&nbsp </i> Refresh</button> </a>
+</div>
+
+<hr style="background-color:green;  height:5px;" />
+
+<div style="float:left; ">
+
+ <a href="/reg/login"><img src="/static/img/login10.jpg" width="400px" height="400px" title="CLick to login"/></a>
+
+
+{% endblock %}
+
+

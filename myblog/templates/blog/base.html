@@ -2,13 +2,43 @@
 <html>
 <head>
        <title>Blog </title>
+      <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+      <link rel="icon" href="/static/img/favicon.ico"type="image/x-ico"/>
+      <style type="type/css">
+      </style>
 <meta>
 </head>
 <body>
-      <div id="content" > 
+<div  style=" height:65px;"> 
+
+<img src="/static/img/logo2.png" title="we build,we deliver"/> <i style="font-size:1.5em;" >Create a Blog,it absolutely free</i>
+<button style="float :right;" class="btn"><i class="icon-user" >&nbsp</i>Welcome,{{user.username}}<i class="icon"></i> </button>
+
+<form class="navbar-search pull-left " method="get" action="/blog/posts/search/">
+<i class="icon search"></i>
+  <input class="search-query" type="text" name="q" placeholder="search"/>
+</form>
+<a href="/reg/logout"><button style="float :right;" class="btn btn-danger"><i class="icon-user" >&nbsp</i>Logout<i class="icon"></i> </button>&nbsp&nbsp</a>
+
+
+</div><hr style="background-color:green;  margin-left:4em ; margin-right:16em ;height:5px;" />
+
+     <div class="container-fluid"  style="height:600px;">
+     <div class="row-fluid">
+     <div class="span2" style="width:800px;">
+     </div>
+      <div id="content"  class="span10" > 
       {% block content %}
-      <a href="/blog/posts">Clink to get to POSTS </a>
+
+        <img src="/static/img/log3.png" width="600px" height="400px" title="we bu‎ild,we deliver" "/>
+      <div style="text-align:center;  float:right;">
+    
+      <a href="/blog/posts"><button class="btn btn-success" style="margin-top:10em;"><i class="icon-pencil">&nbsp </i>CLICK TO POST </button> </a>
+      </div>
+     <hr/>
       {% endblock %}
+      </div>
+      </div>
       </div>
 </body>
 </html>

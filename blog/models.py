@@ -12,6 +12,9 @@ class Post(models.Model):
        Dateupdated=models.DateField(auto_now=True)
        def Firstsixtycharacters(self):
            return self.body[:60]
+       def get_absolute_url(self):
+           return '/blog/posts/%i/True' % self.id
+           
        def __unicode__(self):
              return self.title
 

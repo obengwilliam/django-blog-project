@@ -1,0 +1,32 @@
+{%   extends "reg/base.html" %}
+{% block content %}
+<div>
+{% if logged_in %}
+{% include "blog/base.html" with user=users%}
+{% else %}
+<div>
+<img src="/static/img/logo2.png" title="we build,we deliver"/> <i style="font-size:1.5em;" >Create a Blog,it absolutely free</i>
+<a href="/reg/signup"><button type='button' style="float:right;" class="btn btn-danger"><i class="icon-thumbs-up">&nbsp&nbsp&nbsp </i> SignUp</button></a>
+<a href=""><button type='button' style="float:right; margin-right:1em"><i class="icon-refresh">&nbsp&nbsp </i> Refresh</button> </a>
+</div>
+
+
+<hr style="background-color:green;  height:5px;" />
+
+
+<div style="float:left; ">
+
+  <img src="/static/img/login.jpg" width="600px" height="400px" title="we bu‎ild,we deliver"/>
+
+</div>
+<form method='post'  action="" class="well form-inline" style="float:right;  width:400px ;  ">
+<strong><h3>Sign In <i style="float:right ;font-size:0.5em">wblogger</i></h3></strong><br/>
+{{form.as_p}}
+<input type="submit" name="submit" class="btn btn-success" value="Sign In"><br/>
+<a href="">Can't access account? </a>
+</form>
+
+{% endif %}
+</div>
+
+{% endblock %}

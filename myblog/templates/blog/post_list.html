@@ -1,14 +1,46 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#"><i class="icon-pencil"></i>LIST OF POSTS</a>
+  </li>
+  <li><a href="#">...</a></li>
+  <li><a href="#">...</a></li>
+</ul>
 
+
+
+
+
+<button class="btn btn-warning"><i class="icon-plus"> </i>Add Posts</button>
+<hr/>
+<table   class="table table-bordered" style="color:red; background-color:#CCCCCC 
+;">
+<tr>
+<td width="100px" >TITLE</td>
+<td width="100px">Date Created</td>
+ <td width="100px">Date Updated</td>
+<td >POSTS </td>
+</tr>
+</table>
 {% for i in posts %}
-<h2><a href="/blog/posts/{{i.id}}/True" >{{i.title}} </a> 
-</h2>
-         <ul> 
+<!--<h2><a href="/blog/posts/{{i.id}}/True" >{{i.title}} </a> 
+</h2>-->
+<table   class="table table-bordered">
+<tr>
+<td width="100px" ><a href="/blog/posts/{{i.id}}/True" >{{ i.title }}</a></td>
+<td width="100px">{{ i.Datecreated }}</td>
+ <td width="100px">{{ i.Dateupdated }}</td>
+<td >{{ i.Firstsixtycharacters }}<a href="/blog/posts/{{i.id}}/True"  style="color:green">  Read more>>>></a></td>
+</tr>
+</table>
+
+
+        <!-- <ul> 
          <li>created:{{ i.Datecreated }} </li>
          <li>updated: {{ i.Dateupdated }}</li>
          <li>{{ i.Firstsixtycharacters }}</li>
-     	 </ul>
+     	 </ul>-->
 
 
 {% endfor %}

@@ -1,24 +1,69 @@
 {%   extends "blog/base.html" %}
 {% block content %}
-<div style="background-color:silver; width:900px; align:center">
 
-<p> <h2>Title :{{ posts.title}}</h2><br/><hr/>
-    <b>created</b>:{{posts.Datecreated}}&nbsp&nbsp
-    <b>updated</b>:{{posts.Dateupdated}}<br/>
-</p>
 
-<p style="color:red"> Body:<br/>{{posts.body}}</p>
+ <h1 style="text-align:center; font-size:2em; color:green; ">{{ posts.title}}</h1>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#"><i class="icon-pencil"></i>POST</a>
+  </li>
+  <li><a href="#">...</a></li>
+  <li><a href="#">...</a></li>
+</ul>
+<table cellspacing="5" border="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="300px"><p>
+Created<h2>{{posts.Datecreated}}</h2>&nbsp<br/>
+Updated<h3 style="color:green">{{posts.Dateupdated}}</h3>&nbsp<br/>
+
+</p></td>
+<td style="border-left: 1px solid blue; padding: 5px; height:500px"><BR></td>
+<td width="900" valign="top" align="left">
+<!--main body-->
+<div style="height:120px;width:500px;font:16px/26px Georgia, Garamond, Serif; overflow:scroll;">{{posts.body}}</div><hr/>
 
 
                  {% for a in comments %}
+                  {% ifequal  a.author user.username %}
                  <p>
-                 <b>Author</b>:{{a.author}}<br/>
-                 <b>date created</b>:{{ a.Datecreated}}<br/>
-                 <b>date updated</b>:{{ a.Dateupdated}}<br/>
+                  Author &nbsp&nbsp<b style="font-size:1.5em ;color:green;">{{a.author}}</b>&nbsp&nbsp	
+                  Date created &nbsp&nbsp<b>{{ a.Datecreated}}</b>&nbsp&nbsp
+                  Date updated &nbsp&nbsp<b>{{ a.Dateupdated}}</b><br/>
                  </p>
-                 <p style="color:red"><b>Comments<br/></b>:{{ a.body}}</p>
-
+                 Comment &nbsp&nbsp<div style="width:500px; border-radius:25px; border:0.1em solid green ;font:16px/26px Georgia, Garamond, Serif; overflow-y:scroll;" > {{ a.body}}</div><hr/>
+                 <div> <a href="/blog/comments/{{a.id }}/edit"><button class="btn btn-warning"> <i class="icon-edit"></i>Edit Comment</button></a></div>             </br>
+                 {% endifequal%}
+                 
                  {%endfor%}
+                 <br/>
+                 <br/>
+                 <hr/>
+                 <div>
+                 <form method='post' action="">
+                  {{form.as_p}}
+                 <input type="submit" value='ADD Comment' >
+                 </form>
 
-</div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
 {% endblock %}
